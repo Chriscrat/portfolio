@@ -1,0 +1,11 @@
+@use 'variables';
+@use 'reset';
+@use 'animations';
+@use 'scrollbar';
+@use 'gradients';
+@use 'colors';
+@use 'typographies';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

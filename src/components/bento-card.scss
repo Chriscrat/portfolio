@@ -1,0 +1,22 @@
+.bento-float-x {
+    animation: floatX var(--anim-duration, 6s) ease-in-out var(--anim-delay, 0s) infinite;
+}
+
+.bento-float-y {
+    animation: floatY var(--anim-duration, 6s) ease-in-out var(--anim-delay, 0s) infinite;
+}
+
+.bento-float-x-rev {
+    animation: floatXReverse var(--anim-duration, 6s) ease-in-out var(--anim-delay, 0s) infinite;
+}
+
+.bento-float-y-rev {
+    animation: floatYReverse var(--anim-duration, 6s) ease-in-out var(--anim-delay, 0s) infinite;
+}
+
+.bento-float-x:hover,
+.bento-float-y:hover,
+.bento-float-x-rev:hover,
+.bento-float-y-rev:hover {
+    animation-play-state: paused;
+}

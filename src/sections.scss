@@ -1,0 +1,29 @@
+.maintenance-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+    }
+    #beback {
+        position: absolute;
+        bottom: 5rem;
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+
+section:nth-child(2n+1):not(#contact) {
+    background: rgb(var(--color-primary-600-raw) / 0.5);
+}

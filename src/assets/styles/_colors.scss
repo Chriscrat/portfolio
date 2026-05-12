@@ -1,0 +1,90 @@
+// Génère les classes text-{token}-{scale}, bg-{token}-{scale}, border-{token}-{scale}
+// pour toutes les familles de couleurs du thème.
+// Les variables CSS s'adaptent automatiquement au thème (light/dark).
+
+$scales: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950;
+
+// token Tailwind → famille de variable CSS
+$families: (
+    'primary': 'primary',
+    'secondary': 'secondary',
+    'accent': 'accent',
+    'tx': 'text',
+    'bg': 'background',
+);
+
+@layer utilities {
+    // ── Scales par famille ──────────────────────────────────────────
+    @each $token, $family in $families {
+        @each $scale in $scales {
+            .text-#{$token}-#{$scale} {
+                color: var(--color-#{$family}-#{$scale});
+            }
+
+            .bg-#{$token}-#{$scale} {
+                background-color: var(--color-#{$family}-#{$scale});
+            }
+
+            .border-#{$token}-#{$scale} {
+                border-color: var(--color-#{$family}-#{$scale});
+            }
+        }
+    }
+
+    // ── Tokens sémantiques (non couverts par Tailwind) ──────────────
+    .text-surface {
+        color: var(--color-surface);
+    }
+    .text-surface-hover {
+        color: var(--color-surface-hover);
+    }
+    .text-shadow {
+        color: var(--color-shadow);
+    }
+    .text-shadow-hover {
+        color: var(--color-shadow-hover);
+    }
+
+    .text-primary {
+        color: var(--color-primary);
+    }
+    .text-secondary {
+        color: var(--color-secondary);
+    }
+    .text-accent {
+        color: var(--color-accent);
+    }
+
+    .bg-primary {
+        background-color: var(--color-primary);
+    }
+    .bg-secondary {
+        background-color: var(--color-secondary);
+    }
+    .bg-accent {
+        background-color: var(--color-accent);
+    }
+
+    .bg-surface-hover {
+        background-color: var(--color-surface-hover);
+    }
+    .bg-shadow {
+        background-color: var(--color-shadow);
+    }
+    .bg-shadow-hover {
+        background-color: var(--color-shadow-hover);
+    }
+
+    .border-border-hover {
+        border-color: var(--color-border-hover);
+    }
+    .border-primary {
+        border-color: var(--color-primary);
+    }
+    .border-secondary {
+        border-color: var(--color-secondary);
+    }
+    .border-accent {
+        border-color: var(--color-accent);
+    }
+}

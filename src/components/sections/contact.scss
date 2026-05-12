@@ -1,0 +1,57 @@
+$form-bg-color: rgba(39, 0, 112, 0.678);
+$input-border-color: rgb(72 11 142 / 0.4);
+$input-background-color: rgb(37 13 63);
+$input-text-color: rgb(229 210 254);
+$input-placeholder-color: rgba(255, 255, 255, 0.35);
+$input-focus-color: rgb(89, 14, 175);
+$color-grid: rgb(240 237 247 / 0.2);
+
+section#contact {
+    position: relative;
+    overflow: hidden;
+    .cyber-grid {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background-image:
+            linear-gradient($color-grid 1px, transparent 1px), linear-gradient(90deg, $color-grid 1px, transparent 1px);
+        background-size: 40px 40px;
+        animation: movegrid 10s linear infinite;
+    }
+    .contact-form-container {
+        background-color: $form-bg-color;
+        .contact-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid $input-border-color;
+            background: $input-background-color;
+            color: $input-text-color;
+            font-size: 0.875rem;
+            font-family: inherit;
+            outline: none;
+            resize: none;
+            transition:
+                border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+            &::placeholder {
+                color: $input-placeholder-color;
+            }
+
+            &:focus {
+                border-color: $input-focus-color;
+                box-shadow: 0 0 0 3px color-mix(in srgb, $input-focus-color 15%, transparent);
+            }
+        }
+    }
+}
+
+@keyframes movegrid {
+    0%{
+        transform: translate(0, 0);
+    }
+    100%{
+        transform: translate(-100px, -100px);
+    }
+}
