@@ -1,0 +1,67 @@
+@mixin text-gradient($gradient) {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@layer utilities {
+    // ── Texte dégradé linéaire ──────────────────────────────────────
+    .text-gradient-primary-secondary {
+        @include text-gradient(var(--linearPrimarySecondary));
+    }
+
+    .text-gradient-primary-accent {
+        @include text-gradient(var(--linearPrimaryAccent));
+    }
+
+    .text-gradient-secondary-accent {
+        @include text-gradient(var(--linearSecondaryAccent));
+    }
+
+    .text-radial-primary-secondary {
+        @include text-gradient(var(--radialPrimarySecondary));
+    }
+
+    .text-radial-primary-accent {
+        @include text-gradient(var(--radialPrimaryAccent));
+    }
+
+    .text-radial-primary-dark {
+        @include text-gradient(var(--radialPrimaryDark));
+    }
+
+    .text-radial-secondary-accent {
+        @include text-gradient(var(--radialSecondaryAccent));
+    }
+
+    // ── Background dégradé linéaire ─────────────────────────────────
+    .bg-gradient-primary-secondary {
+        background: var(--linearPrimarySecondary);
+    }
+
+    .bg-gradient-primary-accent {
+        background: var(--linearPrimaryAccent);
+    }
+
+    .bg-gradient-secondary-accent {
+        background: var(--linearSecondaryAccent);
+    }
+
+    // ── Background dégradé radial ───────────────────────────────────
+    .bg-radial-primary-secondary {
+        background: var(--radialPrimarySecondary);
+    }
+
+    .bg-radial-primary-accent {
+        background: var(--radialPrimaryAccent);
+    }
+
+    .bg-radial-primary-dark {
+        background: var(--radialPrimaryDark);
+    }
+
+    .bg-radial-secondary-accent {
+        background: var(--radialSecondaryAccent);
+    }
+}

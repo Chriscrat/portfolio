@@ -1,0 +1,13 @@
+:root {
+    --font-family: 'Ubuntu';
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        src: url('../fonts/Ubuntu/Ubuntu-Regular.ttf'); /* IE9 Compat Modes */
+        src:
+            local(''),
+            /* Modern Browsers */ url('../fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+    }
+}
+
