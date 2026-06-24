@@ -24,6 +24,6 @@
 }
 
 
-section:nth-child(2n+1):not(#contact) {
+section:nth-child(even):not(#contact) {
     background: rgb(var(--color-primary-600-raw) / 0.5);
 }
