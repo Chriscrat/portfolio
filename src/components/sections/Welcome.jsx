@@ -27,8 +27,8 @@ export default function Welcome() {
                     </h1>
                     <div className="flex flex-row text-xs sm:text-md md:text-lg text-white gap-2">
                         <span>
-                            Développeur Fullstack Senior <span className="text-accent-500 font-bold">Vue.js</span> &{' '}
-                            <span className="text-accent-500 font-bold">Node.js</span>
+                            Développeur Fullstack Senior <span className="font-bold">Vue.js</span> &{' '}
+                            <span className="font-bold">Node.js</span>
                         </span>
                         <span className="max-md:hidden">|</span>
                         <span> 10+ ans</span>

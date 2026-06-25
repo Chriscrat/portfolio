@@ -195,7 +195,7 @@ export default function Contact() {
                                 <BentoCard
                                     key={name}
                                     href={href}
-                                    className={`${theme === 'dark' ? 'bg-accent' : 'bg-gray-900'} !p-5 !px-6 cursor-pointer group text-white`}
+                                    className={`${theme === 'dark' ? 'bg-accent-600' : 'bg-gray-900'} !p-5 !px-6 cursor-pointer group text-white`}
                                 >
                                     <div className="flex items-center gap-3.5">
                                         <span className={'flex items-center justify-center w-11 h-11 rounded-sm shrink-0'}>
@@ -207,7 +207,7 @@ export default function Contact() {
                                         </div>
                                         <ArrowUpRight
                                             size={18}
-                                            className="ml-auto shrink-0 transition-[transform,color] duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary"
+                                            className="ml-auto shrink-0 transition-[transform,color] duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary-300"
                                         />
                                     </div>
                                 </BentoCard>
