@@ -1,0 +1,58 @@
+.gravity-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    line-height: 1;
+    white-space: nowrap;
+    user-select: none;
+    transform-origin: center center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.gravity-pill-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+}
+
+.gravity-pill-icon {
+    flex-shrink: 0;
+    opacity: 0.85;
+}
+
+// List view pills are smaller and static — override physics pill sizing
+.gravity-list-pill {
+    font-size: 14px;
+    padding: 4px 12px;
+    transform: none !important;
+    position: static !important;
+    opacity: 1 !important;
+    will-change: auto !important;
+}
+
+.gravity-list-view {
+    animation: gravityListIn 0.25s ease-out both;
+}
+
+@keyframes gravityListIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 360px) {
+    .gravity-pill {
+        font-size: 16px;
+        padding: 8px 14px;
+    }
+}
