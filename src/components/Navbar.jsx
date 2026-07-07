@@ -41,7 +41,7 @@ export default function Navbar() {
     return (
         <header
             className={[
-                'fixed m-md:w-screen top-0 z-[100] py-4 bg-primary-500 transition-[background,backdrop-filter,box-shadow,margin,padding,background-color,border-radius] shadow-[0_1px_0_var(--color-border)] duration-300',
+                'fixed m-md:w-screen top-0 z-[100] py-4 bg-primary-400 transition-[background,backdrop-filter,box-shadow,margin,padding,background-color,border-radius] shadow-[0_1px_0_var(--color-border)] duration-300',
                 scrolled
                     ? 'left-0 right-0 m-0 rounded-none backdrop-blur-[16px] shadow-[0_1px_0_var(--color-border)]'
                     : 'xl:left-[15%] xl:right-[15%] md:left-[5%] md:right-[5%] left-0 right-0 md:mt-12 mx-0 md:rounded-3xl',
