@@ -4,7 +4,6 @@
 :root {
     --primary: 120 19 236;
     --secondary:  230 25 168;
-    --card-bg: var(--color-primary-950);
     --card-border-color: 230 25 168;
 }
 
@@ -14,7 +13,6 @@
     perspective: 1000px;
     .card {
         padding: 20px 15px;
-        background: var(--card-bg);
         border: 1px solid rgb(var(--card-border-color) / 0.5);
 
         transform-style: preserve-3d;
@@ -34,7 +32,7 @@
         cursor: pointer;
     }
 
-    /* Grid positioning */
+    /* Grid positioning */ƒ
     .t-1 {
         top: 0%;
         left: 0%;
@@ -339,13 +337,11 @@
     .label {
         display: block;
         font-size: 1rem;
-        color: #888;
         margin-bottom: 5px;
     }
 
     .value {
         font-size: 0.8rem;
-        color: #fff;
         font-weight: bold;
     }
 }
