@@ -1,3 +1,19 @@
+:root[data-theme="dark"] {
+    --lines-color: var(--color-primary-500);
+    --lines-background: #000;
+    --sun-bg-gradient: linear-gradient(#fcdf11, #ff623f, #fe2085 50%);
+    --glow-color: #d44;
+    --sky-bg-gradient: linear-gradient(#214 75%, #249);
+}
+
+:root[data-theme="light"] {
+    --lines-color: #fff;
+    --lines-background: #000;
+    --sun-bg-gradient: linear-gradient(#f2ff00, #ff7b00, #0408ff 80%);
+    --glow-color: unset;
+    --sky-bg-gradient: linear-gradient(rgb(228, 228, 228) 75%, rgb(0, 0, 0));
+}
+
 #retrobg {
     position: relative;
     overflow: hidden;
@@ -12,7 +28,7 @@
         top: 0;
         width: 100%;
         height: 70%;
-        background: linear-gradient(#214 75%, #249);
+        background: var(--sky-bg-gradient);
     }
     &-ground {
         position: absolute;
@@ -21,7 +37,7 @@
         height: 30%;
         bottom: 0;
         border-top: 2px solid #bf578c;
-        background-color: #000;
+        background-color: var(--lines-background);
     }
     &-groundShadow {
         position: absolute;
@@ -46,7 +62,7 @@
         .retrobg-vline {
             width: 100%;
             height: 100%;
-            background-color: rgb(var(--color-primary-500-raw));
+            background: var(--lines-color);
         }
         .retrobg-hline {
             height: 3px;
@@ -78,10 +94,9 @@
         margin-bottom: -15%;
     }
     &-sun {
-        --glow-color: #d44;
         padding-top: 100%;
         border-radius: 50%;
-        background-image: linear-gradient(#fcdf11, #ff623f, #fe2085 50%);
+        background-image: var(--sun-bg-gradient);
         box-shadow: 0 0 160px 80px var(--glow-color);
     }
     &-mountains {

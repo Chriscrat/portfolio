@@ -1,6 +1,10 @@
 import './neonBackground.scss';
+import { useTheme } from '../context/ThemeContext';
 
 export default function NeonBackground() {
+    const { darkTheme } = useTheme();
+    const isDark = darkTheme === 'dark';
+
     const HORIZONTAL_LINES = 30;
     const VERTICAL_LINES = 10;
     return (
@@ -170,27 +174,25 @@ export default function NeonBackground() {
                 <div id="retrobg-linesWrap">
                     <div id="retrobg-lines">
                         <div id="retrobg-vlines">
-                            {
-                                [...Array(HORIZONTAL_LINES)].map((_, i) =>
-                                    <div
-                                        key={i}
-                                        className="retrobg-vline"
-                                    ></div>)
-                            }
+                            {[...Array(HORIZONTAL_LINES)].map((_, i) => (
+                                <div
+                                    key={i}
+                                    className="retrobg-vline"
+                                ></div>
+                            ))}
                         </div>
                         <div id="retrobg-hlines">
-                            {
-                                [...Array(VERTICAL_LINES)].map((_, i) =>
-                                    <div
-                                        key={i}
-                                        className="retrobg-hline"
-                                    ></div>)
-                            }
+                            {[...Array(VERTICAL_LINES)].map((_, i) => (
+                                <div
+                                    key={i}
+                                    className="retrobg-hline"
+                                ></div>
+                            ))}
                         </div>
                     </div>
                 </div>
                 <div id="retrobg-groundShadow"></div>
             </div>
         </div>
-    )
+    );
 }
