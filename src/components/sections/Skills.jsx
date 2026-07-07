@@ -2,10 +2,8 @@ import './skills.scss';
 import BentoCard from '../BentoCard';
 import GravitySkillsCard from '../GravitySkillsCard';
 import skillGroups from '../../data/skills';
-import { useTheme } from '../../context/ThemeContext';
 
 export default function Skills() {
-    const { theme } = useTheme();
     return (
         <section
             id="skills"
