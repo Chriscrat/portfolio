@@ -13,7 +13,10 @@ const statusBadge = (
 );
 
 export default function About() {
-    const { theme, toggleTheme } = useTheme();
+    const { darkTheme } = useTheme();
+    const isDark = darkTheme === 'dark';
+    const GITHUB_URL = 'https://github.com/Chriscrat';
+
     return (
         <section
             id="about"
@@ -67,7 +70,7 @@ export default function About() {
                 <BentoCard
                     className={[
                         'sm:col-span-2 max-[560px]:col-span-4 md:col-span-2 lg:col-span-1',
-                        theme === 'dark' ? 'bg-primary-800' : 'bg-primary-500',
+                        isDark === 'dark' ? 'bg-primary-800' : 'bg-primary-500',
                     ].join(' ')}
                 >
                     <p className="text-md font-semibold tracking-[0.08em] uppercase text-center mb-4 text-white">Stack principale</p>
@@ -108,17 +111,17 @@ export default function About() {
 
                 {/* GitHub card */}
                 <BentoCard
-                    className={[theme === 'dark' ? 'bg-white' : 'bg-gray-900', 'col-span-2 cursor-pointer max-[560px]:col-span-4'].join(
+                    className={[isDark === 'dark' ? 'bg-white' : 'bg-gray-900', 'col-span-2 cursor-pointer max-[560px]:col-span-4'].join(
                         ' ',
                     )}
-                    href="https://github.com/Chriscrat"
+                    href={GITHUB_URL}
                 >
                     <div className="flex items-center gap-3.5 h-full group">
                         <FaGithub
                             size={36}
-                            className={`${theme === 'dark' ? 'text-gray-900' : 'text-white'} shrink-0"`}
+                            className={`${isDark === 'dark' ? 'text-gray-900' : 'text-white'} shrink-0"`}
                         />
-                        <div className={theme === 'dark' ? 'text-gray-900' : 'text-white'}>
+                        <div className={isDark === 'dark' ? 'text-gray-900' : 'text-white'}>
                             <p className="text-3xl font-semibold">Chriscrat</p>
                             <p className="text-md mt-0.5">Voir le profil GitHub</p>
                         </div>
@@ -126,7 +129,7 @@ export default function About() {
                             size={40}
                             className={[
                                 'ml-auto shrink-0 transition-[transform,color] duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary',
-                                theme === 'dark' ? 'text-gray-900' : 'text-white',
+                                isDark === 'dark' ? 'text-gray-900' : 'text-white',
                             ].join(' ')}
                         />
                     </div>
@@ -136,7 +139,7 @@ export default function About() {
                 <BentoCard
                     className={[
                         'text-center flex flex-col items-center justify-center gap-1 max-[560px]:col-span-4 text-white',
-                        theme === 'dark' ? 'bg-primary-800' : 'bg-primary-500',
+                        isDark === 'dark' ? 'bg-primary-800' : 'bg-primary-500',
                     ].join(' ')}
                 >
                     <MapPin

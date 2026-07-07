@@ -5,7 +5,7 @@ import { ArrowDown, ArrowRight } from 'lucide-react';
 import CyberpunkCard from '../CyberpunkCard';
 
 export default function Welcome() {
-    const { theme } = useTheme();
+    const { darkTheme } = useTheme();
     return (
         <section
             id="welcome"

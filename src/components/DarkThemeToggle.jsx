@@ -1,14 +1,14 @@
-import './theme-toggle.scss';
+import './dark-theme-toggle.scss';
 import { Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
-export default function ThemeToggle() {
-    const { theme, toggleTheme } = useTheme();
-    const isDark = theme === 'dark';
+export default function DarkThemeToggle() {
+    const { darkTheme, toggleDarkTheme } = useTheme();
+    const isDark = darkTheme === 'dark';
 
     return (
         <button
-            onClick={toggleTheme}
+            onClick={toggleDarkTheme}
             aria-label={isDark ? 'Activer le thème clair' : 'Activer le thème sombre'}
             title={isDark ? 'Mode clair' : 'Mode sombre'}
             className={[

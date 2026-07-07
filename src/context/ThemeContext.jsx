@@ -3,20 +3,20 @@ import { createContext, useContext, useEffect, useState } from 'react';
 const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
-    const [theme, setTheme] = useState(() => {
-        const saved = localStorage.getItem('portfolio-theme');
+    const [darkTheme, setDarkTheme] = useState(() => {
+        const saved = localStorage.getItem('portfolio-dark-theme');
         if (saved) return saved;
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     });
 
     useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('portfolio-theme', theme);
-    }, [theme]);
+        document.documentElement.setAttribute('data-theme', darkTheme);
+        localStorage.setItem('portfolio-dark-theme', darkTheme);
+    }, [darkTheme]);
 
-    const toggleTheme = () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+    const toggleDarkTheme = () => setDarkTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
 
-    return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
+    return <ThemeContext.Provider value={{ darkTheme, toggleDarkTheme }}>{children}</ThemeContext.Provider>;
 }
 
 export function useTheme() {

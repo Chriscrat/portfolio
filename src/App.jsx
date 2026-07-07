@@ -10,7 +10,7 @@ import Experiences from './components/sections/Experiences';
 import Contact from './components/sections/Contact';
 import Footer from './components/Footer';
 import AnimatedBackground from './components/AnimatedBackground';
-import ThemeToggle from './components/ThemeToggle';
+import DarkThemeToggle from './components/DarkThemeToggle';
 import './sections.scss';
 
 function Portfolio() {
@@ -70,7 +70,7 @@ function Portfolio() {
                     </div>
                     <AnimatedBackground />
                     <div className="fixed right-0 bottom-0">
-                        <ThemeToggle />
+                        <DarkThemeToggle />
                     </div>
                 </>
             )}
