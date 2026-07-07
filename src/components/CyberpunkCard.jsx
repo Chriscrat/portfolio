@@ -1,7 +1,11 @@
 import './cyberpunkCard.scss';
 import { Download } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 export default function CyberpunkCard({ withIdentity, withJobTitle }) {
+    const { darkTheme } = useTheme();
+    const isDark = darkTheme === 'dark';
+
     function downloadFile() {
         const CVFile = '/CV_Senior_Fullstack_developer_Christophe_BARRETO.pdf';
         window.open(CVFile, '_blank');
@@ -113,7 +117,7 @@ export default function CyberpunkCard({ withIdentity, withJobTitle }) {
                 className="trigger t-25"
             ></span>
             <div
-                className="card"
+                className={['card', isDark ? 'bg-slate-950' : 'bg-white'].join(' ')}
                 id="cyber-card"
             >
                 <div className="card-content">
@@ -144,16 +148,16 @@ export default function CyberpunkCard({ withIdentity, withJobTitle }) {
 
                     <div className="stats">
                         <div className="stat-box">
-                            <span className="label">EXP</span>
-                            <span className="value">10+</span>
+                            <span className={['label font-bold', isDark ? 'text-gray-400' : 'text-accent-500'].join(' ')}>EXP</span>
+                            <span className="value text-tx-muted">10+</span>
                         </div>
                         <div className="stat-box">
-                            <span className="label">STACKS</span>
-                            <span className="value">VUE / NODE</span>
+                            <span className={['label font-bold', isDark ? 'text-gray-400' : 'text-accent-500'].join(' ')}>STACKS</span>
+                            <span className="value text-tx-muted">VUE / NODE</span>
                         </div>
                         <div className="stat-box">
-                            <span className="label">Disponible ?</span>
-                            <span className="value">Oui</span>
+                            <span className={['label font-bold', isDark ? 'text-gray-400' : 'text-accent-500'].join(' ')}>DISPONIBLE ?</span>
+                            <span className="value text-tx-muted">Oui</span>
                         </div>
                     </div>
 
