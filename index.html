@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="fr">
     <head>
+        <script>
+            (function () {
+                var saved = localStorage.getItem('portfolio-dark-theme');
+                var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            })();
+        </script>
         <link
             rel="icon"
             type="image/png"
