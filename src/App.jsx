@@ -69,7 +69,7 @@ function Portfolio() {
                         <Footer />
                     </div>
                     <AnimatedBackground />
-                    <div className="fixed right-0 bottom-0">
+                    <div className="fixed right-0 bottom-0 z-10">
                         <DarkThemeToggle />
                     </div>
                 </>
