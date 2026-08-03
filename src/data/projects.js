@@ -1,54 +1,94 @@
-import { LayoutDashboard, Braces, Component } from 'lucide-react'
+import { Globe, ExternalLink } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 
 const projects = [
     {
-        id: 'devflow',
-        title: 'DevFlow',
-        description: 'Un tableau de bord complet pour la gestion des tâches d\'équipe. Il intègre un système Kanban en temps réel, permet le suivi précis des sprints et génère des rapports détaillés pour améliorer l\'efficacité opérationnelle.',
-        stack: ['Vue.js', 'Node.js', 'PostgreSQL'],
+        id: 'groovebox',
+        title: 'Groovebox',
+        description:
+            "Application de composition de morceaux de musique à partir d'échantillon (samples) pour reproduire un style musical (preset) : Dubstep, Lo-fi, etc. Ces derniers proposent des instruments qui sera possible de faire jouer en activant des notes sur une piste de 15 notes (step) tout en pouvant ajuster le tempo.",
+        stack: ['Vue.js 3', 'Pinia', 'TypeScript', 'Tone.js'],
         iconColor: '#6d0dd3',
-        Icon: LayoutDashboard,
-        status: 'Live',
-        github: 'https://github.com/mockuser/devflow',
-        liveUrl: 'https://www.devflow-demo.com',
-        cover: '/assets/images/projects/devflow_cover.png',
-        screenshots: ['/assets/images/projects/devflow_1.png', '/assets/images/projects/devflow_2.png'],
+        Icon: null,
+        status: 'Mock',
+        links: [
+            {
+                text: 'GitHub',
+                icon: FaGithub,
+                url: 'https://github.com/Chriscrat/groovebox',
+            },
+        ],
+        cover: '/projects/groovebox/cover.png',
+        screenshots: ['/projects/groovebox/cover.png', '/projects/groovebox/lo-fi.png', '/projects/groovebox/dubstep.png'],
         animation: 'floatY',
         animationDuration: '8s',
         animationDelay: '0s',
     },
     {
-        id: 'typeapi',
-        title: 'TypeAPI',
-        description: "Ce boilerplate API REST est construit en TypeScript et Express. Il fournit une gestion robuste de l'authentification (JWT), utilise Zod pour la validation des données à chaque niveau, garantissant une architecture propre et maintenable.",
-        stack: ['TypeScript', 'Express', 'JWT'],
+        id: 'oserbouger',
+        title: 'Oser bouger',
+        description:
+            "Application qui affiche des évènements en Île-de-France sous forme de cartes avec scroll infini, carte interactive, système de filtres à facettes (adresse, ville, code postal). Il s'agit d'une démarche personnelle de découverte de la stack Angular dans un cas concret ou l'on consomme une API publique et applique le design system de l'État.",
+        stack: ['Angular', 'TypeScript', 'DSFR'],
         iconColor: '#994bec',
-        Icon: Braces,
+        Icon: null,
         status: 'Live',
-        github: 'https://github.com/mockuser/typeapi',
-        liveUrl: 'https://api.typeapi-demo.com',
-        cover: '/assets/images/projects/typeapi_cover.png',
-        screenshots: ['/assets/images/projects/typeapi_1.png', '/assets/images/projects/typeapi_2.png'],
+        links: [
+            {
+                text: 'GitHub',
+                icon: FaGithub,
+                url: 'https://github.com/Chriscrat/oser-bouger',
+            },
+            {
+                text: 'Site officiel',
+                icon: Globe,
+                url: 'https://oser-bouger.dev-cba.com',
+            },
+            {
+                text: "Système de Design de l'État",
+                icon: ExternalLink,
+                url: 'https://www.systeme-de-design.gouv.fr/version-courante/fr',
+            },
+            {
+                text: 'Opendata Paris',
+                icon: ExternalLink,
+                url: 'https://opendata.paris.fr/pages/home/',
+            },
+        ],
+        cover: '/projects/oser-bouger/cover.png',
+        screenshots: [
+            '/projects/oser-bouger/homepage.png',
+            '/projects/oser-bouger/filters.png',
+            '/projects/oser-bouger/cards.png',
+            '/projects/oser-bouger/map.png',
+            '/projects/oser-bouger/dark-theme.png',
+        ],
         animation: 'floatX',
         animationDuration: '9s',
         animationDelay: '1.2s',
     },
     {
-        id: 'vuekit',
-        title: 'VueKit',
-        description: 'Une bibliothèque de composants UI réutilisables pour Vue 3. Elle met l\'accessibilité au centre (ARIA compliant), supporte le dark mode nativement, et est conçue sans aucune dépendance externe lourde.',
-        stack: ['Vue.js 3', 'TypeScript', 'Vite'],
+        id: 'pixel-tchat',
+        title: 'Pixel tchat',
+        description:
+            "Application de communication par texte. Elle permet de créer et de rejoindre des groupes de discussion. Ce projet permet de mettre en application une démarche d'architecture qui sépare le frontend, le backend et la base de données dans des containers isolés. Les messages sont persistés sur une base de données PostgreSQL par le biais d'un backend en NestJS puis afficher sur un frontend réalisé avec Next.js. Pour des soucis de performance, un middleware Redis est mis en place pour la synchronisation des messages en temps réel.",
+        stack: ['Next.js', 'NestJS', 'TypeScript', 'TailwindCSS', 'Docker', 'PostgreSQL', 'Redis'],
         iconColor: '#b989eb',
-        Icon: Component,
+        Icon: null,
         status: 'Mock',
-        github: 'https://github.com/mockuser/vuekit',
-        liveUrl: null, // No official URL provided yet
-        cover: '/assets/images/projects/vuekit_cover.png',
-        screenshots: ['/assets/images/projects/vuekit_1.png'],
+        links: [
+            {
+                text: 'GitHub',
+                icon: FaGithub,
+                url: 'https://github.com/pixel-tchat',
+            },
+        ],
+        cover: '/projects/pixel-tchat/cover.png',
+        screenshots: [],
         animation: 'floatYReverse',
         animationDuration: '7s',
         animationDelay: '0.6s',
     },
-]
+];
 
-export default projects
+export default projects;
