@@ -1,9 +1,9 @@
 import './welcome.scss';
-import BentoCard from '../BentoCard';
-import { useTheme } from '../../context/ThemeContext';
+import BentoCard from '../components/BentoCard';
+import { useTheme } from '../context/ThemeContext';
 import { ArrowDown, ArrowRight } from 'lucide-react';
-import CyberpunkCard from '../CyberpunkCard';
-import NeonBackground from '../NeonBackground';
+import CyberpunkCard from '../components/CyberpunkCard';
+import NeonBackground from '../components/NeonBackground';
 
 export default function Welcome() {
     const { darkTheme } = useTheme();

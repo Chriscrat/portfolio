@@ -2,15 +2,16 @@ import { useState, useEffect } from 'react';
 
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
-import Welcome from './components/sections/Welcome';
-import About from './components/sections/About';
-import Skills from './components/sections/Skills';
-import Projects from './components/sections/Projects';
-import Experiences from './components/sections/Experiences';
-import Contact from './components/sections/Contact';
+import Welcome from './views/Welcome';
+import About from './views/About';
+import Skills from './views/Skills';
+import Projects from './views/Projects';
+import Experiences from './views/Experiences';
+import Contact from './views/Contact';
 import Footer from './components/Footer';
 import AnimatedBackground from './components/AnimatedBackground';
 import DarkThemeToggle from './components/DarkThemeToggle';
+import { getMaintenanceStatus } from './services/status-service';
 import './sections.scss';
 
 function Portfolio() {
@@ -18,13 +19,18 @@ function Portfolio() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('/api/status')
-            .then(res => res.json())
-            .then(data => {
+        const checkMaintenanceStatus = async () => {
+            try {
+                const data = await getMaintenanceStatus();
                 setIsMaintenanceEnabled(data.maintenance);
+            } catch {
+                setIsMaintenanceEnabled(false);
+            } finally {
                 setLoading(false);
-            })
-            .catch(() => setLoading(false));
+            }
+        };
+
+        checkMaintenanceStatus();
     }, []);
 
     // TODO : spinner

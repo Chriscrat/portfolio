@@ -1,4 +1,4 @@
-import './cyberpunkCard.scss';
+import './cyberpunk-card.scss';
 import { Download } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -16,106 +16,12 @@ export default function CyberpunkCard({ withIdentity, withJobTitle }) {
             className="card-wrapper md:w-[350px]"
             onClick={() => downloadFile()}
         >
-            <span
-                target="_blank"
-                className="trigger t-1"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-2"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-3"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-4"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-5"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-6"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-7"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-8"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-9"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-10"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-11"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-12"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-13"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-14"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-15"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-16"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-17"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-18"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-19"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-20"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-21"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-22"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-23"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-24"
-            ></span>
-            <span
-                target="_blank"
-                className="trigger t-25"
-            ></span>
+            {Array.from({ length: 25 }, (_, i) => (
+                <span
+                    key={i}
+                    className={`trigger t-${i + 1}`}
+                ></span>
+            ))}
             <div
                 className={['card', isDark ? 'bg-slate-950' : 'bg-white'].join(' ')}
                 id="cyber-card"

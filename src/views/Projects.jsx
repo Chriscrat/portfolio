@@ -1,7 +1,6 @@
 import './projects.scss';
 import { FaGithub } from 'react-icons/fa';
-import BentoCard from '../BentoCard';
-import projects from '../../data/projects';
+import projects from '../data/projects';
 
 function ProjectCard({ project }) {
     const { Icon, iconColor, title, description, stack, status, github, animation, animationDuration, animationDelay } = project;

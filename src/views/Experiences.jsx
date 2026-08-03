@@ -1,8 +1,8 @@
 import './experiences.scss';
 import { useState } from 'react';
 import { ChevronDown, MapPin, Handshake } from 'lucide-react';
-import BentoCard from '../BentoCard';
-import experiences from '../../data/experiences';
+import BentoCard from '../components/BentoCard';
+import experiences from '../data/experiences';
 
 function PositionAccordion({ position, isOpen, onToggle }) {
     return (

@@ -1,7 +1,7 @@
 import './skills.scss';
-import BentoCard from '../BentoCard';
-import GravitySkillsCard from '../GravitySkillsCard';
-import skillGroups from '../../data/skills';
+import BentoCard from '../components/BentoCard';
+import GravitySkillsCard from '../components/GravitySkillsCard';
+import skillGroups from '../data/skills';
 
 export default function Skills() {
     return (

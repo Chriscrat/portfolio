@@ -1,13 +1,14 @@
 import './contact.scss';
 import { useState, useRef } from 'react';
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../context/ThemeContext';
 import { ArrowUpRight, CheckCircle, AlertCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { Turnstile } from '@marsidev/react-turnstile';
 
-import BentoCard from '../BentoCard';
-import CyberpunkCard from '../CyberpunkCard';
-import socialLinks from '../../data/contact';
+import BentoCard from '../components/BentoCard';
+import CyberpunkCard from '../components/CyberpunkCard';
+import { sendContactMessage } from '../services/contact-service';
+import socialLinks from '../data/contact';
 
 const SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY;
 const inputClass = 'contact-input';
@@ -39,16 +40,7 @@ export default function Contact() {
         setStatus('sending');
 
         try {
-            const res = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...form, turnstileToken }),
-            });
-
-            if (!res.ok) {
-                const data = await res.json();
-                throw new Error(data.error ?? "Erreur lors de l'envoi.");
-            }
+            await sendContactMessage({ ...form, turnstileToken });
 
             setStatus('sent');
             setForm({ name: '', email: '', message: '' });
@@ -65,11 +57,8 @@ export default function Contact() {
     };
 
     return (
-        <section
-            id="contact"
-            className={[isDark === 'dark' ? 'bg-secondary-950' : 'bg-primary-800'].join(' ')}
-        >
-            <div className={['cyber-grid', isDark === 'dark' ? 'bg-secondary-950' : 'bg-primary-700 light-grid'].join(' ')}></div>
+        <section id="contact">
+            <div className={['cyber-grid', isDark ? 'bg-secondary-100' : 'bg-primary-700 light-grid'].join(' ')}></div>
             <div className="min-h-screen flex flex-col justify-between pt-[100px] pb-[50px] px-6 max-[560px]:py-20 max-[560px]:px-4">
                 <h1 className="text-4xl pb-12 xl:left-32 text-white mb-6 relative">
                     &lt;
@@ -171,7 +160,7 @@ export default function Contact() {
                                         siteKey={SITE_KEY}
                                         onSuccess={setTurnstileToken}
                                         onExpire={() => setTurnstileToken('')}
-                                        options={{ theme: isDark === 'dark' ? 'dark' : 'light' }}
+                                        options={{ theme: isDark ? 'dark' : 'light' }}
                                     />
                                     {error && (
                                         <div className="flex items-center gap-2 text-sm text-red-400">
@@ -199,7 +188,7 @@ export default function Contact() {
                                 <BentoCard
                                     key={name}
                                     href={href}
-                                    className={`${isDark === 'dark' ? 'bg-accent-600' : 'bg-gray-900'} !p-5 !px-6 cursor-pointer group text-white`}
+                                    className={`${isDark ? 'bg-accent-600' : 'bg-gray-900'} !p-5 !px-6 cursor-pointer group text-white`}
                                 >
                                     <div className="flex items-center gap-3.5">
                                         <span className={'flex items-center justify-center w-11 h-11 rounded-sm shrink-0'}>

@@ -1,14 +1,7 @@
 import { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import Matter from 'matter-js';
-
-export const THEME_COLORS = {
-    frontend: 'var(--color-primary-500)',
-    backend: 'var(--color-secondary-500)',
-    tools: 'var(--color-accent-500)',
-    ia: 'var(--color-primary-700)',
-    'soft-skills': 'var(--color-primary-300)',
-};
+import { THEME_COLORS } from '../constants/theme-colors';
 
 const DROP_INTERVAL_MS = 180;
 const WALL_THICKNESS = 100;

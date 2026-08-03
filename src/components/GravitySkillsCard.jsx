@@ -2,7 +2,8 @@ import { useRef, useState } from 'react';
 import { List, Zap } from 'lucide-react';
 import BentoCard from './BentoCard';
 import skillGroups from '../data/skills';
-import { useGravityPhysics, THEME_COLORS } from '../hooks/use-gravity-physics';
+import { useGravityPhysics } from '../hooks/use-gravity-physics';
+import { THEME_COLORS } from '../constants/theme-colors';
 import './gravity-skills-card.scss';
 
 export default function GravitySkillsCard({ className = '' }) {

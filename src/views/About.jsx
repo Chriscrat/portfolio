@@ -2,8 +2,8 @@ import './about.scss';
 import { MapPin, ArrowUpRight, ArrowRight, Crown } from 'lucide-react';
 
 import { FaGithub } from 'react-icons/fa';
-import BentoCard from '../BentoCard';
-import { useTheme } from '../../context/ThemeContext';
+import BentoCard from '../components/BentoCard';
+import { useTheme } from '../context/ThemeContext';
 
 const statusBadge = (
     <span className="inline-flex items-center gap-2 text-md font-medium text-white bg-black px-3 py-1.5 rounded-full w-fit">
@@ -20,7 +20,7 @@ export default function About() {
     return (
         <section
             id="about"
-            className="flex flex-col px-6 pt-[50px] md:pt-[100px] pb-20"
+            className="flex flex-col justify-between min-h-screen pt-[100px] pb-[50px] px-6 max-[560px]:py-20 max-[560px]:px-4"
         >
             <h1 className="text-4xl pb-12 xl:left-32 text-white mb-6 relative">
                 &lt;
@@ -70,7 +70,7 @@ export default function About() {
                 <BentoCard
                     className={[
                         'sm:col-span-2 max-[560px]:col-span-4 md:col-span-2 lg:col-span-1',
-                        isDark === 'dark' ? 'bg-primary-800' : 'bg-primary-500',
+                        isDark ? 'bg-primary-800' : 'bg-primary-500',
                     ].join(' ')}
                 >
                     <p className="text-md font-semibold tracking-[0.08em] uppercase text-center mb-4 text-white">Stack principale</p>
@@ -111,7 +111,7 @@ export default function About() {
 
                 {/* GitHub card */}
                 <BentoCard
-                    className={[isDark === 'dark' ? 'bg-white' : 'bg-gray-900', 'col-span-2 cursor-pointer max-[560px]:col-span-4'].join(
+                    className={[isDark ? 'bg-white' : 'bg-gray-900', 'col-span-2 cursor-pointer max-[560px]:col-span-4'].join(
                         ' ',
                     )}
                     href={GITHUB_URL}
@@ -119,9 +119,9 @@ export default function About() {
                     <div className="flex items-center gap-3.5 h-full group">
                         <FaGithub
                             size={36}
-                            className={`${isDark === 'dark' ? 'text-gray-900' : 'text-white'} shrink-0"`}
+                            className={`${isDark ? 'text-gray-900' : 'text-white'} shrink-0"`}
                         />
-                        <div className={isDark === 'dark' ? 'text-gray-900' : 'text-white'}>
+                        <div className={isDark ? 'text-gray-900' : 'text-white'}>
                             <p className="text-3xl font-semibold">Chriscrat</p>
                             <p className="text-md mt-0.5">Voir le profil GitHub</p>
                         </div>
@@ -129,7 +129,7 @@ export default function About() {
                             size={40}
                             className={[
                                 'ml-auto shrink-0 transition-[transform,color] duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary',
-                                isDark === 'dark' ? 'text-gray-900' : 'text-white',
+                                isDark ? 'text-gray-900' : 'text-white',
                             ].join(' ')}
                         />
                     </div>
@@ -139,7 +139,7 @@ export default function About() {
                 <BentoCard
                     className={[
                         'text-center flex flex-col items-center justify-center gap-1 max-[560px]:col-span-4 text-white',
-                        isDark === 'dark' ? 'bg-primary-800' : 'bg-primary-500',
+                        isDark ? 'bg-primary-800' : 'bg-primary-500',
                     ].join(' ')}
                 >
                     <MapPin
