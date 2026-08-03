@@ -69,7 +69,7 @@ function Portfolio() {
                             <About />
                             <Skills />
                             <Experiences />
-                            {/* <Projects /> */}
+                            <Projects />
                             <Contact />
                         </main>
                         <Footer />

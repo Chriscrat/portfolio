@@ -115,17 +115,3 @@
 .rainbow.rotate {
     animation: spin 3s linear infinite;
 }
-
-@keyframes shine {
-    0% {
-        background-position: 0;
-    }
-
-    60% {
-        background-position: 600px;
-    }
-
-    100% {
-        background-position: 600px; 
-    }
-}
